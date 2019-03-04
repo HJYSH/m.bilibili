@@ -40,6 +40,10 @@ export default {
     bottom:0
   .body
     padding:0 .24rem
+    position:absolute
+    top:1.8rem
+    left:0
+    right:0
     .swiper
       width:100%
       height:0
