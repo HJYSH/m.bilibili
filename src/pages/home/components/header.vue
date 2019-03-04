@@ -4,7 +4,7 @@
       <p class="logo iconfont">&#xe600;</p>
       <p class="search iconfont">&#xe601;</p>
       <p class="road iconfont">&#xe683;</p>
-      <p class="load">下载 App</p>
+      <router-link to="/"><p class="load">下载 App</p></router-link>
     </div>
     <div class="nav-show">
       <div class="nav-1">
@@ -19,23 +19,43 @@
       </div>
       <div class="nav-span iconfont" @click="hidden">&#xe62e;</div>
     </div>
-    <div class="nav-hidden" v-show="show">
-      <div class="hidden">
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
-        <p>首页</p>
+    <transition
+      name="fade"
+      enter-active-class="animated slideInDown"
+      leave-active-class="animated slideOutUp"
+    >
+      <div class="nav-hidden" v-show="show">
+        <div class="hidden">
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+          <p>首页</p>
+        </div>
+        <div class="hidden-footer" @click="hidden">
+          <span class="iconfont">&#xe62d;</span>
+        </div>
       </div>
-      <div class="hidden-footer iconfont" @click="hidden">&#xe62d;</div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -57,16 +77,15 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
-@keyframes animate{
-  from{background:black}
-  to{background:white}
-}
   .header
+    position:relative
     display: flex
     flex-direction :row
     padding: 0.13rem 0
     height:.62rem
     line-height:.62rem
+    z-index :9999
+    background:#fff
     .logo
       padding-left:.36rem
       font-size :.62rem
@@ -102,10 +121,12 @@ export default {
       border-radius: .085rem
   .nav-show
     position: relative
+    background:#fff
+    padding:.2rem 0
     .nav-span
       position: absolute
       left:90%
-      top:0
+      top:.2rem
       bottom:0
       line-height :.52rem
       text-align :center
@@ -115,14 +136,16 @@ export default {
       width:90%;
       height:.52rem
       margin-right:10%;
+      background:#fff
       overflow:hidden
       .nav-1-1
-        height:.65rem
+        height:.52rem
         line-height: .52rem
         padding-left:.4rem
-        overflow-y :hidden
+        overflow-y: hidden
         overflow-x :scroll
         white-space :nowrap
+        padding-bottom: .4rem
         p
           display: inline-block
           text-align: left
@@ -132,19 +155,21 @@ export default {
     position:fixed
     top:.88rem
     width:100%
+    height:3.9rem
     background:#fff
     .hidden
       padding-left:.15rem
       padding-right:.15rem
       p
         float:left
+        position: relative
         width: 16.66%
         text-align :center
         line-height:.87rem
     .hidden-footer
-      margin:auto
       width:1.8rem
       height:.42rem
+      margin:0 auto
       line-height .42rem
       text-align :center
 </style>
