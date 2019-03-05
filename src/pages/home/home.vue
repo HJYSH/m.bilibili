@@ -1,8 +1,10 @@
 <template>
   <div>
     <home-header></home-header>
-    <home-swiper></home-swiper>
-    <home-list></home-list>
+    <div class="content">
+      <home-swiper></home-swiper>
+      <home-list></home-list>
+    </div>
   </div>
 </template>
 
@@ -25,5 +27,9 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
-
+  .content
+    position:absolute
+    top:1.8rem
+    left:0
+    width:100%
 </style>

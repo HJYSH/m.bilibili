@@ -198,9 +198,6 @@ export default {
 <style lang="stylus" scoped>
   .header
     padding:.24rem .12rem
-    position:absolute
-    top:3.8rem
-    left:0
     .list
       width:100%
       font-size:0

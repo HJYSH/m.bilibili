@@ -3,8 +3,8 @@
     <div class="swiper">
       <swiper :options="swiperOption">
         <!-- slides -->
-        <swiper-slide><img class="swiper-img" src="http://i0.hdslb.com/bfs/archive/475f799e8f72dacf942daf12479bdbea8de51701.jpg@480w_300h.webp" /></swiper-slide>
-        <swiper-slide><img class="swiper-img" src="//i0.hdslb.com/bfs/archive/37a91a2860930ace53556d8c74413f269b242615.jpg@480w_300h.webp" /></swiper-slide>
+        <swiper-slide class="swiper-slide"><img class="swiper-img" src="http://i0.hdslb.com/bfs/archive/475f799e8f72dacf942daf12479bdbea8de51701.jpg@480w_300h.webp" /></swiper-slide>
+        <swiper-slide class="swiper-slide"><img class="swiper-img" src="//i0.hdslb.com/bfs/archive/37a91a2860930ace53556d8c74413f269b242615.jpg@480w_300h.webp" /></swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
@@ -40,16 +40,12 @@ export default {
     bottom:0
   .body
     padding:0 .24rem
-    position:absolute
-    top:1.8rem
-    left:0
-    right:0
     .swiper
-      width:100%
-      height:0
-      padding-bottom:29.375%
+      width:100% !important
       border-radius :.2rem
       overflow:hidden
-      .swiper-img
-        width: 100%
+      .swiper-slide
+        width:100% !important
+        .swiper-img
+          width: 100%
 </style>
