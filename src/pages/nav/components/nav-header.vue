@@ -49,7 +49,7 @@
 
 <script>
 export default {
-  name: 'HomeHeader',
+  name: 'NavHeader',
   data () {
     return {
       show: false,
