@@ -2,15 +2,18 @@
   <div>
     <nav-header></nav-header>
     <nav-recommend></nav-recommend>
+    <nav-list></nav-list>
   </div>
 </template>
 
 <script>
 import NavHeader from './components/nav-header'
 import NavRecommend from './components/nav-recommend'
+import NavList from './components/nav-list'
 export default {
   name: 'Nav',
   components: {
+    NavList,
     NavRecommend,
     NavHeader
   },
