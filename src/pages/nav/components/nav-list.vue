@@ -11,26 +11,26 @@
       </div>
       <div class="header">
         <div class="header-item">
-          <div class="list-item"  v-for="inner of items.item" :key="inner.id">
+          <router-link class="list-item"  v-for="inner of items.item" :key="inner.id" :to="'/detail2/'+inner.id">
             <div class="item">
-              <div class="item-image">
-                <img class="image" :src=inner.imgsrc />
-                <div class="image-msg">
-                  <div class="number-tb">
-                    <span class="iconfont">&#xe636;</span>
-                    <p class="number">{{inner.view}}</p>
-                  </div>
-                  <div class="number-right">
-                    <span class="iconfont">&#xe650;</span>
-                    <p class="number">{{inner.number}}</p>
+                <div class="item-image">
+                  <img class="image" :src=inner.imgsrc />
+                  <div class="image-msg">
+                    <div class="number-tb">
+                      <span class="iconfont">&#xe636;</span>
+                      <p class="number">{{inner.view}}</p>
+                    </div>
+                    <div class="number-right">
+                      <span class="iconfont">&#xe650;</span>
+                      <p class="number">{{inner.number}}</p>
+                    </div>
                   </div>
                 </div>
+                <div class="desc">
+                  <p>{{inner.desc}}</p>
+                </div>
               </div>
-              <div class="desc">
-                <p>{{inner.desc}}</p>
-              </div>
-            </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -154,6 +154,7 @@ export default {
             display:inline-block
             width: 50%
             overflow: hidden
+            color:#000
             .item
               padding: 0 .12rem
               .item-image
