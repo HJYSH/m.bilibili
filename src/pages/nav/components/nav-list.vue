@@ -2,8 +2,12 @@
   <div class="nav-list">
     <div class="body" v-for="items of list" :key="items.index">
       <div class="list border-top">
-        <div class="title">{{items.title}}</div>
-        <div class="more">{{items.more}}</div>
+        <div class="title">
+            {{items.title}}
+        </div>
+        <router-link class="more" :to="items.to">
+          <div class="iconfont">{{items.more}}<span class="iconfont">&#xe62f;</span></div>
+        </router-link>
       </div>
       <div class="header">
         <div class="header-item">
@@ -42,6 +46,7 @@ export default {
         {
           title: '热门推荐',
           more: '排行榜',
+          to: '/detail',
           item: [
             {
               id: 1,
@@ -76,6 +81,7 @@ export default {
         {
           title: '热门推荐',
           more: '排行榜',
+          to: '/detail',
           item: [
             {
               id: 14,
@@ -129,13 +135,16 @@ export default {
         &:before
           border-bottom-color:#999
         .title
-          margin-left:.44rem
+          margin-left:.24rem
           width:100%
         .more
           position: absolute
           top:0
           right:0
-          margin-right:.44rem
+          margin-right:.24rem
+          color:#ffa726
+          span
+            color:#aaa
       .header
         padding:.0 .12rem
         .header-item

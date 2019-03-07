@@ -172,7 +172,7 @@ export default {
     .nav-show
       position: relative
       background:#fff
-      padding:.2rem 0
+      padding:.2rem 0 .2rem .4rem
       .nav-span
         position: absolute
         left:90%
@@ -191,7 +191,6 @@ export default {
         .nav-1-1
           height:.52rem
           line-height: .52rem
-          padding-left:.4rem
           overflow-y: hidden
           overflow-x :scroll
           white-space :nowrap

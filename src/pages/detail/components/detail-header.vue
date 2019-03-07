@@ -1,12 +1,8 @@
 <template>
   <div class="body">
     <div class="header">
-      <p class="logo iconfont">&#xe600;</p>
-      <p class="search iconfont">&#xe601;</p>
-      <p class="road iconfont">&#xe683;</p>
-      <router-link class="load" to="/">
-        <p>下载 App</p>
-      </router-link>
+      <p>排行榜</p>
+      <router-link class="iconfont reback" to="/nav">&#xe62f;</router-link>
     </div>
     <div class="nav-show">
       <div class="nav-1" >
@@ -49,7 +45,7 @@
 
 <script>
 export default {
-  name: 'HomeHeader',
+  name: 'DetailHeader',
   data () {
     return {
       show: false,
@@ -129,54 +125,25 @@ export default {
     background:#fff
     .header
       position:relative
-      display: flex
-      flex-direction :row
       padding: 0.13rem 0
       height:.62rem
       line-height:.62rem
       z-index :9999
       background:#fff
-      .logo
-        padding-left:.36rem
-        font-size :.62rem
-        color:rgb(222, 105, 140)
-      .search
-        font-size :.48rem
-        width:.48rem
-        height:.48rem
-        line-height: .48rem
-        overflow: hidden
-        margin:auto .44rem auto auto
-        color:#777
-      .road
-        overflow: hidden
-        font-size :.48rem
-        width:.48rem
-        height:.48rem
-        line-height: .48rem
-        margin:auto .24rem auto 0
-        color:#777
-      .load
-        width:1.6rem
-        height:.48rem
-        line-height: .48rem
-        text-align :center
-        font-size :.26rem
-        margin:auto .24rem auto 0
-        color:#fff
-        background:#fb7299
-        border:.01rem solid #fb7299
-        -webkit-border-radius: .085rem
-        -moz-border-radius: .085rem
-        border-radius: .085rem
+      text-align :center
+      font-size :.36rem
+      color: #fb7299
+      .reback
+        position: absolute
+        left:.44rem
+        top:0
     .nav-show
       position: relative
       background:#fff
-      padding:.2rem 0 .2rem .4rem
+      padding-left:.4rem
       .nav-span
         position: absolute
         left:90%
-        top:.2rem
         bottom:0
         line-height :.52rem
         text-align :center
