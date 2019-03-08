@@ -38,7 +38,7 @@ export default {
     padding-left:.44rem
     background: #f9f9f9
     overflow:hidden
-    z-index:999
+    z-index:9
     .recommend
       white-space nowrap
       overflow-x: scroll

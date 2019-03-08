@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="body" id="header">
     <div class="header">
       <p class="logo iconfont">&#xe600;</p>
       <p class="search iconfont">&#xe601;</p>
@@ -87,7 +87,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
   .body
-    position: fixed
     width: 100%
     z-index :999
     background:#fff
