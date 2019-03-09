@@ -10,12 +10,32 @@
         </div>
       </div>
     </div>
+    <div class="toTop iconfont" ref="toTop" @click="scrollToTop">&#xe717;</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Detail2List'
+  name: 'Detail2List',
+  props: {
+    scroll: Number
+  },
+  methods: {
+    scrollToTop () {
+      window.pageYOffset = 0
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    }
+  },
+  watch: {
+    scroll () {
+      if (this.scroll > 554) {
+        this.$refs.toTop.style.display = 'block'
+      } else {
+        this.$refs.toTop.style.display = 'none'
+      }
+    }
+  }
 }
 </script>
 
@@ -53,4 +73,16 @@ export default {
         height:.4rem
         font-size :.24rem
         line-height:.36rem
+  .toTop
+    display:none
+    position:fixed
+    bottom: 1rem
+    right:.5rem
+    height:.8rem
+    width:.8rem
+    line-height :.8rem
+    text-align :center
+    z-index:9
+    border-radius :50%
+    background-color: blanchedalmond
 </style>

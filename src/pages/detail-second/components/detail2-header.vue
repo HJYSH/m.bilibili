@@ -1,6 +1,6 @@
 <template>
-  <div class="body" id="header">
-    <div class="header">
+  <div class="body">
+    <div class="header" ref="body">
       <p class="logo iconfont">&#xe600;</p>
       <p class="search iconfont">&#xe601;</p>
       <p class="road iconfont">&#xe683;</p>
@@ -16,7 +16,6 @@ export default {
   name: 'Detail2Header',
   data () {
     return {
-      show: false,
       NavList: [
         {
           name: '首页',
@@ -76,10 +75,16 @@ export default {
       ]
     }
   },
-  methods: {
-    hidden () {
-      this.show = this.show === true ? undefined : true
-      return this.show
+  props: {
+    scroll: Number
+  },
+  watch: {
+    scroll () {
+      if (this.scroll > 208) {
+        this.$refs.body.style.position = 'fixed'
+      } else {
+        this.$refs.body.style.position = 'relative'
+      }
     }
   }
 }
@@ -88,7 +93,7 @@ export default {
 <style lang="stylus" scoped>
   .body
     width: 100%
-    z-index :999
+    z-index :9
     background:#fff
     .header
       position:relative
@@ -97,8 +102,9 @@ export default {
       padding: 0.13rem 0
       height:.62rem
       line-height:.62rem
-      z-index :9999
+      z-index :99
       background:#fff
+      width:100%
       .logo
         padding-left:.36rem
         font-size :.62rem

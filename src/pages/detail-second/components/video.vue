@@ -19,6 +19,7 @@ export default {
     width:100%
     height:4.22rem
     background-color: rgba(60,60,60,.5)
+    z-index:9999
     .image
       width:100%
       height:100%
