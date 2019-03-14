@@ -1,7 +1,12 @@
 <template>
   <div class="body">
     <div class="list" v-for="item of list" :key="item.index">
-      <div class="rank"><img class="rank-nb" v-if="item.rank" :src="item.rank" /><p>{{item.number}}</p></div>
+      <div class="rank">
+        <img class="rank-nb" v-if="item.rank" :src="item.rank" />
+        <p v-if="item.number">
+          {{item.number}}
+        </p>
+      </div>
       <div class="image"><img :src="item.image"/></div>
       <div class="desc">{{item.desc}}</div>
     </div>
@@ -10,21 +15,12 @@
 
 <script>
 export default {
-  name: 'DetailList',
+  name: 'RanklList',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      list: [
-        {
-          rank: '//s1.hdslb.com/bfs/static/mult/images/rank1.png',
-          image: '//i1.hdslb.com/bfs/archive/289c7e3ee52522b5b305560be0194b7259872c50.jpg@200w_125h.webp',
-          desc: '超唯美的动画《白蛇：缘起》同人MV——下一世再与你'
-        },
-        {
-          number: '4',
-          image: '//i1.hdslb.com/bfs/archive/289c7e3ee52522b5b305560be0194b7259872c50.jpg@200w_125h.webp',
-          desc: '超唯美的动画《白蛇：缘起》同人MV——下一世再与你'
-        }
-      ]
     }
   }
 }
@@ -37,7 +33,9 @@ export default {
     .list
       position:relative
       height:1.5rem
+      width:100%
       margin-top:.24rem
+      overflow:hidden
       .rank
         float:left
         height:1.5rem

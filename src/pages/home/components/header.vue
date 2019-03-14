@@ -10,17 +10,24 @@
     </div>
     <div class="nav-show">
       <div class="nav-1" >
-        <div class="nav-1-1">
+        <div class="nav-1-1" id="nav">
           <router-link
             class="nav-link"
-            v-for="item of NavList"
+            to="/"
+            >
+            <p class="current">
+              首页
+            </p>
+          </router-link><router-link
+            class="nav-link"
+            v-for="item of list"
             :key="item.id"
-            :to="item.to"
+            :to="'/nav/'+ item.id"
           >
-            <p>
+            <p :class="{current : item.pink}">
               {{item.name}}
             </p>
-          </router-link>
+          </router-link><!--两个链接标签之间连着写，不留空格，消除两个链接之间的空隙-->
         </div>
       </div>
       <div class="nav-span iconfont" @click="hidden">&#xe62e;</div>
@@ -32,16 +39,29 @@
     >
       <div class="nav-hidden" v-show="show">
         <div class="hidden">
-          <p
-            v-for="item of NavList"
-            :key="item.id"
+          <router-link
+            class="nav-link"
+            to="/"
+            @click="handleScroll"
           >
+            <p class="current"  @click="hidden">
+              首页
+            </p>
+          </router-link><router-link
+          class="nav-link"
+          v-for="item of list"
+          :key="item.id"
+          :to="'/nav/'+ item.id"
+        >
+          <p :class="{current : item.pink}" @click="hidden">
             {{item.name}}
           </p>
+        </router-link><!--两个链接标签之间连着写，不留空格，消除两个链接之间的空隙-->
         </div>
         <div class="hidden-footer" @click="hidden">
           <span class="iconfont">&#xe62d;</span>
         </div>
+        <div @click="handleScroll">4455</div>
       </div>
     </transition>
   </div>
@@ -50,72 +70,23 @@
 <script>
 export default {
   name: 'HomeHeader',
+  props: {
+    list: Array
+  },
   data () {
     return {
       show: false,
-      NavList: [
-        {
-          name: '首页',
-          id: '1',
-          to: '/'
-        },
-        {
-          name: '首页',
-          id: '12',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '14',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '13',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '137',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '144',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '176',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '1877',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '174',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '19',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '178774',
-          to: '/nav'
-        }
-      ]
+      scrollX: null
     }
   },
   methods: {
     hidden () {
       this.show = this.show === true ? undefined : true
-      return this.show
+      document.getElementById('nav').scrollLeft = 200
+    },
+    handleScroll () {
+      this.scrollX = document.getElementById('nav').scrollLeft
+      console.log(this.scrollX)
     }
   }
 }
@@ -201,6 +172,19 @@ export default {
             text-align: left
             width:20%
             text-indent:.1rem
+            p
+              display:inline
+            .current
+              position: relative
+              color:pink
+              box-sizing border-box
+              &:after
+                position:absolute
+                content:''
+                width:120%
+                left:-10%
+                bottom:-.1rem
+                border-bottom :.05rem solid pink
     .nav-hidden
       position:absolute
       top:.88rem
@@ -209,14 +193,28 @@ export default {
       padding-bottom:.42rem
       z-index :99
       .hidden
+        overflow: hidden
         padding-left:.15rem
         padding-right:.15rem
-        p
-          float:left
-          position: relative
-          width: 16.66%
-          text-align :center
+        .nav-link
+          color:black
+          display: inline-block
+          text-align: center
+          width:16.66%
           line-height:.87rem
+          p
+            display:inline
+          .current
+            position: relative
+            color:pink
+            box-sizing border-box
+            &:after
+              position:absolute
+              content:''
+              width:120%
+              left:-10%
+              bottom:-.1rem
+              border-bottom :.05rem solid pink
       .hidden-footer
         width:1.8rem
         height:.42rem

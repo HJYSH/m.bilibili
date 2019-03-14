@@ -1,0 +1,63 @@
+{
+  "ret": true,
+  "data": {
+    "rankList": [
+      {
+        "name": "全站",
+        "id": "0"
+      },
+      {
+        "name": "动画",
+        "id": "1"
+      },
+      {
+        "name": "番剧",
+        "id": "2"
+      },
+      {
+        "name": "国创",
+        "id": "3"
+      },
+      {
+        "name": "音乐",
+        "id": "4"
+      },
+      {
+        "name": "舞蹈",
+        "id": "5"
+      },
+      {
+        "name": "科技",
+        "id": "6"
+      },
+      {
+        "name": "猎奇",
+        "id": "7"
+      },
+      {
+        "name": "喜欢",
+        "id": "8"
+      },
+      {
+        "name": "别的",
+        "id": "9"
+      },
+      {
+        "name": "乡韵",
+        "id": "10"
+      }
+    ],
+    "list": [
+      {
+        "rank": "//s1.hdslb.com/bfs/static/mult/images/rank1.png",
+        "image": "//i1.hdslb.com/bfs/archive/289c7e3ee52522b5b305560be0194b7259872c50.jpg@200w_125h.webp",
+        "desc": "超唯美的动画《白蛇：缘起》同人MV——下一世再与你"
+      },
+      {
+        "rank": "//s1.hdslb.com/bfs/static/mult/images/rank1.png",
+        "image": "//i1.hdslb.com/bfs/archive/289c7e3ee52522b5b305560be0194b7259872c50.jpg@200w_125h.webp",
+        "desc": "超唯美的动画《白蛇：缘起》同人MV——下一世再与你"
+      }
+    ]
+  }
+}

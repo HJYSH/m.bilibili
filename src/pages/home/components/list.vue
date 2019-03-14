@@ -1,183 +1,23 @@
 <template>
   <div class="header">
-    <div class="list">
-      <div class="list-item">
+    <div class="list" v-if="showList">
+      <div class="list-item" v-for="item of list" :key="item.id">
         <div class="item">
           <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
+            <img class="image" :src="item.imgUrl" />
             <div class="image-msg">
               <div class="number-tb">
                 <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
+                <p class="number">{{item.times}}</p>
               </div>
               <div class="number-right">
                 <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
+                <p class="number">{{item.person}}</p>
               </div>
             </div>
           </div>
           <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
-          </div>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="item">
-          <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
-            <div class="image-msg">
-              <div class="number-tb">
-                <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
-              </div>
-              <div class="number-right">
-                <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
-              </div>
-            </div>
-          </div>
-          <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
-          </div>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="item">
-          <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
-            <div class="image-msg">
-              <div class="number-tb">
-                <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
-              </div>
-              <div class="number-right">
-                <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
-              </div>
-            </div>
-          </div>
-          <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
-          </div>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="item">
-          <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
-            <div class="image-msg">
-              <div class="number-tb">
-                <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
-              </div>
-              <div class="number-right">
-                <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
-              </div>
-            </div>
-          </div>
-          <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
-          </div>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="item">
-          <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
-            <div class="image-msg">
-              <div class="number-tb">
-                <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
-              </div>
-              <div class="number-right">
-                <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
-              </div>
-            </div>
-          </div>
-          <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
-          </div>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="item">
-          <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
-            <div class="image-msg">
-              <div class="number-tb">
-                <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
-              </div>
-              <div class="number-right">
-                <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
-              </div>
-            </div>
-          </div>
-          <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
-          </div>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="item">
-          <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
-            <div class="image-msg">
-              <div class="number-tb">
-                <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
-              </div>
-              <div class="number-right">
-                <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
-              </div>
-            </div>
-          </div>
-          <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
-          </div>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="item">
-          <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
-            <div class="image-msg">
-              <div class="number-tb">
-                <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
-              </div>
-              <div class="number-right">
-                <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
-              </div>
-            </div>
-          </div>
-          <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
-          </div>
-        </div>
-      </div>
-      <div class="list-item">
-        <div class="item">
-          <div class="item-image">
-            <img class="image" src="//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp">
-            <div class="image-msg">
-              <div class="number-tb">
-                <span class="iconfont">&#xe636;</span>
-                <p class="number">28万</p>
-              </div>
-              <div class="number-right">
-                <span class="iconfont">&#xe650;</span>
-                <p class="number">28万</p>
-              </div>
-            </div>
-          </div>
-          <div class="desc">
-            <p>霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！</p>
+            <p>{{item.desc}}</p>
           </div>
         </div>
       </div>
@@ -188,8 +28,16 @@
 <script>
 export default {
   name: 'HomeList',
+  props: {
+    list: Array
+  },
   data () {
     return {
+    }
+  },
+  computed: {
+    showList () {
+      return this.list.length
     }
   }
 }
@@ -204,7 +52,9 @@ export default {
       .list-item
         display:inline-block
         width: 50%
+        height:3rem
         overflow: hidden
+        margin-bottom:.24rem
         .item
           padding: 0 .12rem
           .item-image
@@ -212,6 +62,7 @@ export default {
             width: 100%
             height:0
             padding-bottom:62.965%
+            overflow:hidden
             .image
               width:100%
               -webkit-border-radius: .2rem
@@ -249,5 +100,8 @@ export default {
                   display:inline
           .desc
             font-size :.26rem
-            padding:.2rem 0
+            height:.6rem
+            overflow: hidden
+            line-height:.3rem
+            margin-top:.12rem
 </style>

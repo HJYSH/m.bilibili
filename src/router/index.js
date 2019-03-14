@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/home'
 import Nav from '@/pages/nav/nav'
-import Detail from '@/pages/detail/detail'
+import Rank from '@/pages/detail/rank'
 import Detail2 from '@/pages/detail-second/detail2'
 
 Vue.use(Router)
@@ -15,14 +15,14 @@ export default new Router({
       component: Home
     },
     {
-      path: '/nav',
+      path: '/nav/:id',
       name: 'nav',
       component: Nav
     },
     {
-      path: '/detail',
-      name: 'detail',
-      component: Detail
+      path: '/rank/:id',
+      name: 'rank',
+      component: Rank
     },
     {
       path: '/detail2/:id',

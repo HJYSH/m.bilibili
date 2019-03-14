@@ -1,0 +1,153 @@
+{
+  "ret": true,
+  "data": {
+    "nav": [
+      {
+        "name": "推荐",
+        "id": "005"
+      },
+      {
+        "name": "MAD·AMV",
+          "id": "001"
+      },
+      {
+        "name": "MMD·3D",
+        "id": "002"
+      },
+      {
+        "name": "短片·手书·配音",
+        "id": "003"
+      },
+      {
+        "name": "综合",
+        "id": "004"
+      }
+    ],
+    "contentList": [
+      {
+        "title": "热门推荐",
+        "more": "排行榜",
+        "rank": true,
+        "to": "/rank/1",
+        "content": [
+          {
+            "id": "0001",
+            "person": "3577",
+            "times": "27.7万",
+            "imgUrl": "http://i0.hdslb.com/bfs/archive/19da21a55fe51d92a3c8d3f9b4ee7467b79257c2.jpg@320w_200h.webp",
+            "desc": "【老番茄】 史上最骚杀手（第一集）"
+          },
+          {
+            "id": "0002",
+            "person": "3577",
+            "times": "27.7万",
+            "imgUrl": "http://i1.hdslb.com/bfs/archive/99b3455acebd01752810a7febe99b98255d57a1d.jpg@320w_200h.webp",
+            "desc": "【C菌】资深女玩家耗时一个月打造出梦想游戏桌！"
+          },
+          {
+            "id": "0003",
+            "person": "3577",
+            "times": "27.7万",
+            "imgUrl": "http://i2.hdslb.com/bfs/archive/59d5dc08b45a062d397594b23df45139e562024f.jpg@320w_200h.webp",
+            "desc": "【戴荃×ilem】大氿歌（人声本家/专辑《2:3》收录曲）"
+          },
+          {
+            "id": "0004",
+            "person": "3577",
+            "times": "27.7万",
+            "imgUrl": "http://i0.hdslb.com/bfs/archive/1e1640538a8b435c0b6057c886127a3c80eea0ad.jpg@320w_200h.webp",
+            "desc": "【STN快报第三季12】你看，《鬼泣》这游戏多适合在熊猫直播"
+          }
+        ]
+      },
+      {
+        "title": "趣味科普文",
+        "more": "查看更多",
+        "to": "/detail",
+        "content": [
+          {
+            "id": "0005",
+            "person": "3577",
+            "times": "27.7万",
+            "imgUrl": "http://i0.hdslb.com/bfs/archive/19da21a55fe51d92a3c8d3f9b4ee7467b79257c2.jpg@320w_200h.webp",
+            "desc": "【老番茄】 史上最骚杀手（第一集）"
+          },
+          {
+            "id": "0006",
+            "person": "3577",
+            "times": "27.7万",
+            "imgUrl": "http://i1.hdslb.com/bfs/archive/99b3455acebd01752810a7febe99b98255d57a1d.jpg@320w_200h.webp",
+            "desc": "【C菌】资深女玩家耗时一个月打造出梦想游戏桌！"
+          },
+          {
+            "id": "0007",
+            "person": "3577",
+            "times": "27.7万",
+            "imgUrl": "http://i2.hdslb.com/bfs/archive/59d5dc08b45a062d397594b23df45139e562024f.jpg@320w_200h.webp",
+            "desc": "【戴荃×ilem】大氿歌（人声本家/专辑《2:3》收录曲）"
+          },
+          {
+            "id": "0008",
+            "person": "3577",
+            "times": "27.7万",
+            "imgUrl": "http://i0.hdslb.com/bfs/archive/1e1640538a8b435c0b6057c886127a3c80eea0ad.jpg@320w_200h.webp",
+            "desc": "【STN快报第三季12】你看，《鬼泣》这游戏多适合在熊猫直播"
+          }
+        ]
+      }
+    ],
+    "navList": [
+      {
+        "name": "动画",
+        "id": "1",
+        "to": "/nav",
+        "pink": "true"
+      },
+      {
+        "name": "番剧",
+        "id": "2",
+        "to": "/nav"
+      },
+      {
+        "name": "国创",
+        "id": "3",
+        "to": "/nav"
+      },
+      {
+        "name": "音乐",
+        "id": "4",
+        "to": "/nav"
+      },
+      {
+        "name": "舞蹈",
+        "id": "5",
+        "to": "/nav"
+      },
+      {
+        "name": "科技",
+        "id": "6",
+        "to": "/nav"
+      },
+      {
+        "name": "猎奇",
+        "id": "7",
+        "to": "/nav"
+      },
+      {
+        "name": "喜欢",
+        "id": "8",
+        "to": "/nav"
+      },
+      {
+        "name": "别的",
+        "id": "9",
+        "to": "/nav"
+      },
+      {
+        "name": "乡韵",
+        "id": "10",
+        "to": "/nav"
+      }
+    ]
+  }
+}

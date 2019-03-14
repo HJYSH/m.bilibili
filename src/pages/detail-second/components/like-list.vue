@@ -1,5 +1,19 @@
 <template>
   <div>
+    <div class="cao">
+      <div class="left">
+        <div class="iconfont show">&#xe606;<p>收藏</p></div>
+      </div>
+      <div class="left">
+        <div class="iconfont  show">&#xe673;<p>缓存</p></div>
+      </div>
+      <div class="left">
+        <div class="iconfont show">&#xe608;<p>分享</p></div>
+      </div>
+      <div class="right">
+        <div class="iconfont show">&#xe602;<p>46464689</p></div>
+      </div>
+    </div>
     <div class="likeList border-bottom">
       <div class="image">
         <img class="item" src="//i1.hdslb.com/bfs/archive/232095a864d35d062ca0c460a6232af25b9f7e8c.jpg@320w_200h.webp" />
@@ -40,6 +54,30 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  .cao
+    position: relative
+    margin:0 .36rem
+    height:.38rem
+    line-height: .38rem
+    font-size: .24rem
+    .left
+      display:inline-block
+      margin-right:.4rem
+      .show
+        display:inline-block
+        font-size :.3rem
+        p
+          display: inline-block
+          transform scale(0.8)
+    .right
+      position: absolute
+      right:.12rem
+      top:0
+      .show
+        display:inline-block
+        p
+          display: inline-block
+          transform scale(0.8)
   .likeList
     position: relative
     padding:.24rem 0
@@ -50,6 +88,7 @@ export default {
       width:2.34rem
       border-radius :.1rem
       .item
+        width:100%
         height:100%
     .desc
       position: absolute

@@ -5,24 +5,28 @@
         <div class="title">
             {{items.title}}
         </div>
-        <router-link class="more" :to="items.to">
-          <div class="iconfont">{{items.more}}<span class="iconfont">&#xe62f;</span></div>
+        <router-link class="more" :class="{pink:items.rank}" :to="items.to">
+          <div>
+            <span class="iconfont rank" v-if="items.rank">&#xe6d8;</span>
+            {{items.more}}
+            <span class="iconfont">&#xe62f;</span>
+          </div>
         </router-link>
       </div>
       <div class="header">
         <div class="header-item">
-          <router-link class="list-item"  v-for="inner of items.item" :key="inner.id" :to="'/detail2/'+inner.id">
+          <router-link class="list-item"  v-for="inner of items.content" :key="inner.id" :to="'/detail2/'+inner.id">
             <div class="item">
                 <div class="item-image">
-                  <img class="image" :src=inner.imgsrc />
+                  <img class="image" :src="inner.imgUrl" />
                   <div class="image-msg">
                     <div class="number-tb">
                       <span class="iconfont">&#xe636;</span>
-                      <p class="number">{{inner.view}}</p>
+                      <p class="number">{{inner.times}}</p>
                     </div>
                     <div class="number-right">
                       <span class="iconfont">&#xe650;</span>
-                      <p class="number">{{inner.number}}</p>
+                      <p class="number">{{inner.person}}</p>
                     </div>
                   </div>
                 </div>
@@ -40,80 +44,11 @@
 <script>
 export default {
   name: 'NavList',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      list: [
-        {
-          title: '热门推荐',
-          more: '排行榜',
-          to: '/detail',
-          item: [
-            {
-              id: 1,
-              imgsrc: '//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp',
-              view: '28万',
-              number: '21545',
-              desc: '霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！'
-            },
-            {
-              id: 2,
-              imgsrc: '//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp',
-              view: '28万',
-              number: '21545',
-              desc: '霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！'
-            },
-            {
-              id: 3,
-              imgsrc: '//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp',
-              view: '28万',
-              number: '21545',
-              desc: '霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！'
-            },
-            {
-              id: 4,
-              imgsrc: '//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp',
-              view: '28万',
-              number: '21545',
-              desc: '霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！'
-            }
-          ]
-        },
-        {
-          title: '热门推荐',
-          more: '排行榜',
-          to: '/detail',
-          item: [
-            {
-              id: 14,
-              imgsrc: '//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp',
-              view: '28万',
-              number: '21545',
-              desc: '霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！'
-            },
-            {
-              id: 25,
-              imgsrc: '//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp',
-              view: '28万',
-              number: '21545',
-              desc: '霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！'
-            },
-            {
-              id: 34,
-              imgsrc: '//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp',
-              view: '28万',
-              number: '21545',
-              desc: '霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！'
-            },
-            {
-              id: 41,
-              imgsrc: '//i2.hdslb.com/bfs/archive/403c71b68ca57b339bf46d53d77d7b897c09ab7f.jpg@320w_200h.webp',
-              view: '28万',
-              number: '21545',
-              desc: '霸权续作 ！ 神仙新作 ！ 四月好看的新番居然有这么多！'
-            }
-          ]
-        }
-      ]
     }
   }
 }
@@ -142,7 +77,12 @@ export default {
           top:0
           right:0
           margin-right:.24rem
+          color:#999
+          font-size :.28rem
+        .pink
           color:#ffa726
+          .rank
+            color:#ffa726
           span
             color:#aaa
       .header
@@ -153,8 +93,10 @@ export default {
           .list-item
             display:inline-block
             width: 50%
+            height:2.8rem
             overflow: hidden
             color:#000
+            margin-bottom:.24rem
             .item
               padding: 0 .12rem
               .item-image
@@ -199,5 +141,8 @@ export default {
                       display:inline
               .desc
                 font-size :.26rem
-                padding:.2rem 0
+                height:.6rem
+                overflow: hidden
+                line-height:.3rem
+                margin-top:.12rem
 </style>

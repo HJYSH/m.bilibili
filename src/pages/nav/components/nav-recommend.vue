@@ -1,16 +1,11 @@
 <template>
   <div class="body">
     <div class="recommend">
-      <p>推荐</p>
-      <p>号楼附近了</p>
-      <p>推荐</p>
-      <p>号楼附近了</p>
-      <p>推荐</p>
-      <p>号楼附近了</p>
-      <p>推荐</p>
-      <p>号楼附近了</p>
-      <p>推荐</p>
-      <p>号楼附近了</p>
+      <router-link :to="'/nav/'+item.id"  v-for="item of list" :key="item.id">
+        <p>
+          {{item.name}}
+        </p>
+      </router-link>
     </div>
   </div>
 </template>
@@ -18,7 +13,8 @@
 <script>
 export default {
   name: 'NavRecommend',
-  components: {
+  props: {
+    list: Array
   },
   data () {
     return {
@@ -46,7 +42,7 @@ export default {
       height:.88rem
       padding-bottom:.44rem
       p
-        color:#fb7299
+        color:black
         margin-right:.48rem
         display:inline-block
 </style>

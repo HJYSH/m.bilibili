@@ -1,10 +1,15 @@
 <template>
   <div class="body">
     <div class="swiper">
-      <swiper :options="swiperOption">
+      <swiper :options="swiperOption" v-if="showSwiper">
         <!-- slides -->
-        <swiper-slide class="swiper-slide"><img class="swiper-img" src="http://i0.hdslb.com/bfs/archive/475f799e8f72dacf942daf12479bdbea8de51701.jpg@480w_300h.webp" /></swiper-slide>
-        <swiper-slide class="swiper-slide"><img class="swiper-img" src="//i0.hdslb.com/bfs/archive/37a91a2860930ace53556d8c74413f269b242615.jpg@480w_300h.webp" /></swiper-slide>
+        <swiper-slide
+          class="swiper-slide"
+          v-for="item of list"
+          :key="item.index"
+        >
+          <img class="swiper-img" :src="item.imgUrl" :key="item.index"/>
+        </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination"  slot="pagination"></div>
       </swiper>
@@ -15,6 +20,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -22,6 +30,11 @@ export default {
         loop: true,
         autoplay: 5000
       }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.list.length
     }
   }
 }
@@ -39,11 +52,13 @@ export default {
   .body >>> .swiper-pagination-bullets
     bottom:0
   .body
-    padding:0 .24rem
+    margin:0 .24rem
+    border-radius :.2rem
+    overflow:hidden
     .swiper
       width:100% !important
-      border-radius :.2rem
-      overflow:hidden
+      height:0
+      padding-bottom:29.6%
       .swiper-slide
         width:100% !important
         .swiper-img

@@ -1,7 +1,9 @@
 <template>
   <div class="body">
     <div class="header">
-      <p class="logo iconfont">&#xe600;</p>
+      <router-link to="/">
+        <p class="logo iconfont">&#xe600;</p>
+      </router-link>
       <p class="search iconfont">&#xe601;</p>
       <p class="road iconfont">&#xe683;</p>
       <router-link class="load" to="/">
@@ -10,14 +12,26 @@
     </div>
     <div class="nav-show">
       <div class="nav-1" >
-        <div class="nav-1-1">
+        <div class="nav-1-1" id="nav">
+          <!--两个链接标签之间连着写，不留空格，消除两个链接之间的空隙-->
           <router-link
             class="nav-link"
-            v-for="item of NavList"
-            :key="item.id"
-            :to="item.to"
+            to="/"
           >
             <p>
+              首页
+            </p>
+          </router-link><router-link
+            class="nav-link"
+            v-for="item of list"
+            :key="item.id"
+            :to="'/nav/'+ item.id"
+            @click="handleClick(item.id)"
+          >
+            <p
+              :class="{current : item.pink}"
+              @click="handleClick(item.id)"
+            >
               {{item.name}}
             </p>
           </router-link>
@@ -32,12 +46,29 @@
     >
       <div class="nav-hidden" v-show="show">
         <div class="hidden">
-          <p
-            v-for="item of NavList"
-            :key="item.id"
+          <!--两个链接标签之间连着写，不留空格，消除两个链接之间的空隙-->
+          <router-link
+            class="nav-link"
+            to="/"
+            id="nav-link"
           >
-            {{item.name}}
-          </p>
+            <p>
+              首页
+            </p>
+          </router-link><router-link
+            class="nav-link"
+            v-for="item of list"
+            :key="item.id"
+            :to="'/nav/'+ item.id"
+          >
+            <p
+              :class="{current : item.pink}"
+              :ref="item.name"
+              @click="handleScroll(item.id)"
+            >
+              {{item.name}}
+            </p>
+          </router-link>
         </div>
         <div class="hidden-footer" @click="hidden">
           <span class="iconfont">&#xe62d;</span>
@@ -50,72 +81,28 @@
 <script>
 export default {
   name: 'NavHeader',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      show: false,
-      NavList: [
-        {
-          name: '首页',
-          id: '1',
-          to: '/'
-        },
-        {
-          name: '首页',
-          id: '12',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '14',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '13',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '137',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '144',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '176',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '1877',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '174',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '19',
-          to: '/nav'
-        },
-        {
-          name: '首页',
-          id: '178774',
-          to: '/nav'
-        }
-      ]
+      show: false
     }
   },
   methods: {
     hidden () {
       this.show = this.show === true ? undefined : true
-      return this.show
+    },
+    handleScroll (msg) {
+      const t = msg - 2
+      if (t > -1) {
+        document.getElementById('nav').scrollLeft = 64 * t
+      }
+      this.show = this.show === true ? undefined : true
+      this.$emit('change', msg)
+    },
+    handleClick (msg) {
+      this.$emit('change', msg)
     }
   }
 }
@@ -201,6 +188,24 @@ export default {
             text-align: left
             width:20%
             text-indent:.1rem
+            border: 0
+            p
+              display:inline
+            .current
+              position: relative
+              color:pink
+              box-sizing border-box
+              &:after
+                position:absolute
+                content:''
+                width:120%
+                left:-10%
+                bottom:-.1rem
+                border-bottom :.05rem solid pink
+          .chose
+            box-sizing :border-box
+            color:pink
+            border-bottom :.1rem solid pink
     .nav-hidden
       position:absolute
       top:.88rem
@@ -211,12 +216,25 @@ export default {
       .hidden
         padding-left:.15rem
         padding-right:.15rem
-        p
-          float:left
-          position: relative
-          width: 16.66%
-          text-align :center
+        .nav-link
+          color:black
+          display: inline-block
+          text-align: center
+          width:16.66%
           line-height:.87rem
+          p
+            display:inline
+          .current
+            position: relative
+            color:pink
+            box-sizing border-box
+            &:after
+              position:absolute
+              content:''
+              width:120%
+              left:-10%
+              bottom:-.1rem
+              border-bottom :.05rem solid pink
       .hidden-footer
         width:1.8rem
         height:.42rem

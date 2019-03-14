@@ -1,9 +1,9 @@
 <template>
   <div>
-    <home-header></home-header>
+    <home-header :list="navList"></home-header>
     <div class="content">
-      <home-swiper></home-swiper>
-      <home-list></home-list>
+      <home-swiper :list="swiperList"></home-swiper>
+      <home-list :list="iconList"></home-list>
     </div>
   </div>
 </template>
@@ -12,6 +12,8 @@
 import HomeHeader from './components/header'
 import HomeSwiper from './components/swiper'
 import HomeList from './components/list'
+import axios from 'axios'
+
 export default {
   name: 'Home',
   components: {
@@ -21,7 +23,28 @@ export default {
   },
   data () {
     return {
+      swiperList: [],
+      iconList: [],
+      navList: []
     }
+  },
+  methods: {
+    getHomeInfo () {
+      axios.get('/api/index.json')
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.navList = data.navList
+        this.swiperList = data.swiperList
+        this.iconList = data.iconList
+      }
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
 }
 </script>
